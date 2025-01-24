@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    // Accessing attributes safely:
+    let myDiv = document.getElementById("myDiv");
+    let x = myDiv.getAttribute("nonExistentAttribute");
+    if(x === null){     
+        console.log("Attribute does not exist. Handling the scenario.");
+    } else {
+        console.log(x);
+    }
+
+    //Correcting tag nesting:
+    document.getElementById("myDiv").innerHTML = "<p>This is a paragraph inside a div</p>";
+
+    //Closing all tags properly
+    document.write("<h1>This is a heading</h1><p>This is a paragraph</p>");
+  </script>
+</body>
+</html>
