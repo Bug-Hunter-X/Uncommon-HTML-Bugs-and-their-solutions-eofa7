@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    // Attempting to access a non-existent attribute
+    let x = document.getElementById("myDiv").getAttribute("nonExistentAttribute");
+    console.log(x); // Output: null, but could lead to unexpected behavior in other cases.
+
+    //Using a tag in an unexpected context. For example nested <p> tags
+    document.getElementById("myDiv").innerHTML = "<p>This is a paragraph inside another paragraph<p>";
+
+    //Unclosed tags. Missing closing tags. This is quite common but can create unexpected issues 
+    document.write("<h1> This is a heading <p> This is a paragraph");
+  </script>
+</body>
+</html>
